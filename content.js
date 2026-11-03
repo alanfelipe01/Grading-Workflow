@@ -45,3 +45,35 @@ document.addEventListener("blur", function (event) {
         campo.value = "";
     }
 }, true);
+
+// Setas para preencher rapidamente as notas
+document.addEventListener("keydown", function (event) {
+    const campo = event.target;
+
+    // Só funciona nos campos de nota identificados pela extensão
+    if (!ehCampoDeNota(campo)) return;
+
+    // Não interfere em combinações com outras teclas
+    if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
+        return;
+    }
+
+    let nota;
+
+    if (event.key === "ArrowUp") {
+        nota = "100";
+    } else if (event.key === "ArrowDown") {
+        nota = "0";
+    } else {
+        return;
+    }
+
+    // Evita que a seta execute outra ação no campo
+    event.preventDefault();
+
+    campo.value = nota;
+
+    // Avisa o Classroom que o valor do campo mudou
+    campo.dispatchEvent(new Event("input", { bubbles: true }));
+    campo.dispatchEvent(new Event("change", { bubbles: true }));
+});
