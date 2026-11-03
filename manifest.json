@@ -1,17 +1,21 @@
 {
   "manifest_version": 3,
   "name": "Grading Workflow",
-  "version": "2.1",
-  "description": "Otimiza a correção no Google Classroom com validação de notas e atalhos de teclado.",
+  "version": "2.2",
+  "description": "Otimiza a correção no Google Classroom com validação de notas, atalhos de teclado e comentários rápidos.",
   "content_scripts": [
     {
       "matches": [
         "https://classroom.google.com/*"
       ],
       "js": [
-        "content.js"
+        "content.js",
+        "comentarios.js"
       ],
-      "run_at": "document_idle"
+      "run_at": "document_idle",
+      "css": [
+        "comentarios.css"
+      ]
     }
   ]
 }

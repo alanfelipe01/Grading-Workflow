@@ -1,0 +1,13 @@
+#gw-comentarios { position: fixed; z-index: 2147483647; right: 16px; bottom: 16px; font: 14px Arial, sans-serif; color: #202124; }
+#gw-comentarios * { box-sizing: border-box; }
+#gw-comentarios button { cursor: pointer; font: inherit; }
+#gw-comentarios .gw-abrir { background: #1a73e8; color: white; border: 0; border-radius: 22px; padding: 11px 16px; box-shadow: 0 2px 8px #0003; }
+#gw-comentarios .gw-painel { position: absolute; bottom: 48px; right: 0; width: min(330px, calc(100vw - 32px)); max-height: min(70vh, 580px); overflow-y: auto; background: white; border: 1px solid #dadce0; border-radius: 12px; padding: 16px; box-shadow: 0 4px 18px #0003; }
+#gw-comentarios .gw-painel[hidden] { display: none; }
+#gw-comentarios .gw-topo { display: flex; align-items: center; justify-content: space-between; font-size: 16px; }
+#gw-comentarios .gw-fechar { border: 0; background: transparent; font-size: 24px; line-height: 1; }
+#gw-comentarios p { line-height: 1.4; color: #5f6368; }
+#gw-comentarios h3 { margin: 15px 0 7px; font-size: 13px; color: #5f6368; }
+#gw-comentarios .gw-lista button { display: block; width: 100%; text-align: left; padding: 9px 10px; margin: 4px 0; background: #f8f9fa; border: 1px solid #dadce0; border-radius: 6px; color: #202124; }
+#gw-comentarios .gw-lista button:hover { background: #e8f0fe; }
+#gw-comentarios .gw-status { margin-bottom: 0; color: #174ea6; }

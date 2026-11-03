@@ -17,6 +17,7 @@ de extensões para navegador.
 - **Validação de notas:** permite apenas as notas `0` e `100` nos campos identificados pela extensão.
 - **Preenchimento rápido:** usa as setas para cima e para baixo para preencher as notas.
 - **Navegação entre estudantes:** usa as setas para a esquerda e para a direita para alternar entre os trabalhos.
+- **Comentários rápidos:** permite inserir mensagens predefinidas no campo de comentário particular para revisar antes de enviar.
 - **Recuperação de foco:** tenta devolver o foco à página quando a prévia de um trabalho o recebe, facilitando a navegação pelo teclado.
 
 ## Atalhos
@@ -31,6 +32,10 @@ de extensões para navegador.
 As setas para preencher notas funcionam quando um campo de nota está selecionado. Já a navegação entre estudantes funciona fora dos campos de edição.
 
 Ao abrir a tela de correção, pode ser necessário clicar uma vez na página antes de usar os atalhos de navegação.
+
+## Comentários rápidos
+
+Clique no campo de comentário particular, abra **Comentários rápidos** e escolha uma das mensagens. Revise e, se quiser, edite o texto antes de enviá-lo pelo Classroom. Os textos podem ser alterados no arquivo `comentarios.js`.
 
 ## Tecnologias utilizadas
 
@@ -58,11 +63,15 @@ A extensão pode ser carregada manualmente em um navegador compatível com exten
 
 ```text
 grading-workflow/
+├── comentarios.css
+├── comentarios.js
 ├── content.js
 ├── manifest.json
 └── README.md
 ```
 
+- **`comentarios.css`:** define a aparência do painel de comentários.
+- **`comentarios.js`:** contém os comentários predefinidos e a lógica do painel.
 - **`content.js`:** contém a lógica de validação, os atalhos e a navegação.
 - **`manifest.json`:** reúne as configurações da extensão e define onde o script será executado.
 
