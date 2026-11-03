@@ -8,7 +8,7 @@
         ],
         "Incompleta": [
             ["Questões ou cálculos faltando", "A PS está incompleta, pois há questões, cálculos ou outras exigências sem resposta."],
-            ["PS incompleta", "A PS foi entregue incompleta."],
+            ["PS incompleta", "PS incompleta, Faltou a pág 00, Questão 00."],
             ["Mínimo de linhas", "A PS não atingiu o mínimo de linhas exigido."]
         ],
         "Imagem embaçada": [
