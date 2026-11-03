@@ -77,3 +77,96 @@ document.addEventListener("keydown", function (event) {
     campo.dispatchEvent(new Event("input", { bubbles: true }));
     campo.dispatchEvent(new Event("change", { bubbles: true }));
 });
+
+// Setas para navegar entre os estudantes
+document.addEventListener("keydown", function (event) {
+    // Ignora combinações com outras teclas e teclas mantidas pressionadas
+    if (
+        event.altKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.metaKey ||
+        event.repeat
+    ) {
+        return;
+    }
+
+    // Não muda de estudante enquanto você edita uma nota ou comentário
+    const elemento = event.target;
+
+    if (
+        elemento instanceof HTMLElement &&
+        (
+            elemento.isContentEditable ||
+            elemento.closest("input, textarea, [contenteditable='true']")
+        )
+    ) {
+        return;
+    }
+
+    let seletor;
+
+    if (event.key === "ArrowLeft") {
+        seletor = 'button[aria-label="Estudante anterior"]';
+    } else if (event.key === "ArrowRight") {
+        seletor = 'button[aria-label="Próximo estudante"]';
+    } else {
+        return;
+    }
+
+    const botao = document.querySelector(seletor);
+
+    // Só executa o atalho se o botão existir e estiver habilitado
+    if (
+        !botao ||
+        botao.disabled ||
+        botao.getAttribute("aria-disabled") === "true"
+    ) {
+        return;
+    }
+
+    event.preventDefault();
+    botao.click();
+
+    // Durante 3 segundos, verifica se a prévia recebeu o foco
+    let verificacoes = 0;
+
+    const verificarFoco = setInterval(function () {
+        verificacoes++;
+
+        if (document.activeElement instanceof HTMLIFrameElement) {
+            const botaoProximo = document.querySelector(
+                'button[aria-label="Próximo estudante"]'
+            );
+
+            if (botaoProximo) {
+                botaoProximo.focus({ preventScroll: true });
+            }
+        }
+
+        if (verificacoes >= 15) {
+            clearInterval(verificarFoco);
+        }
+    }, 200);
+
+    // Tenta recuperar o foco ao abrir a tela de correção
+    let tentativasIniciais = 0;
+
+    const focoInicial = setInterval(function () {
+        tentativasIniciais++;
+
+        if (document.activeElement instanceof HTMLIFrameElement) {
+            const botaoProximo = document.querySelector(
+                'button[aria-label="Próximo estudante"]'
+            );
+
+            if (botaoProximo) {
+                botaoProximo.focus({ preventScroll: true });
+            }
+        }
+
+        if (tentativasIniciais >= 25) {
+            clearInterval(focoInicial);
+        }
+    }, 200);
+});
