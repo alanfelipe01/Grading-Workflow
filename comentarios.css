@@ -1,4 +1,4 @@
-#gw-comentarios { position: fixed; z-index: 2147483647; right: 16px; bottom: 16px; font: 14px Arial, sans-serif; color: #202124; }
+#gw-comentarios { position: fixed; z-index: 2147483647; right: 16px; bottom: 60px; font: 14px Arial, sans-serif; color: #202124; }
 #gw-comentarios * { box-sizing: border-box; }
 #gw-comentarios button { cursor: pointer; font: inherit; }
 #gw-comentarios .gw-abrir { background: #1a73e8; color: white; border: 0; border-radius: 22px; padding: 11px 16px; box-shadow: 0 2px 8px #0003; }

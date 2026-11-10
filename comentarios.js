@@ -1,10 +1,12 @@
 (() => {
     const grupos = {
         "Recusada": [
-            ["Não corresponde à PS", "A atividade enviada não corresponde à PS disponibilizada pelo professor no Classroom."],
+            ["Não corresponde à PS", "PS RECUSADA:Não condiz com a PS postada pelo professor no Classroom."],
             ["Imagem ilegível", "A PS não pôde ser corrigida porque a imagem enviada está ilegível."],
             ["Não escrita à mão", "A PS foi recusada porque não foi escrita à mão, conforme solicitado."],
-            ["Entregue com atraso", "A PS foi recusada porque foi entregue fora do prazo."]
+            ["Entregue com atraso", "A PS foi recusada porque foi entregue fora do prazo."],
+            ["Uso de IA","PS RECUSADA:Indentificamos o uso de inteligência artificial na escrita."],
+            ["Sem Anexo","Nenhum arquivo foi anexado."]
         ],
         "Incompleta": [
             ["Questões ou cálculos faltando", "A PS está incompleta, pois há questões, cálculos ou outras exigências sem resposta."],
